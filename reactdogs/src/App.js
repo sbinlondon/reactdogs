@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Paper from '@material-ui/core/Paper';
 import './App.css';
-import Searchbar from './Searchbar';
+import Chooser from './Chooser';
+import Header from './Header.js';
+import MediaCard from './MediaCard.js';
 
 class App extends Component {
+  
   render() {
     return (
+<<<<<<< HEAD
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -28,8 +32,23 @@ class App extends Component {
           things in here
         </footer>
       </div>
+=======
+      <div className="App"
+          style={{
+          position: 'absolute', 
+          left: '50%', 
+          top: '50%',
+          transform: 'translate(-50%, -50%)'
+          }}
+      >
+        <Header />
+        <Paper>
+          <Chooser />
+          <MediaCard />
+        </Paper>
+</div>
+>>>>>>> 126f628c7f1dd121325fe0583e63788b5c813b68
     );
   }
 }
-
 export default App;
