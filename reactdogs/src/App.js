@@ -22,10 +22,10 @@ class App extends Component {
           </a>
         </header>
 
-        <Searchbar />
+        <p> there will be merge problems! </p>
 
         <footer>
-          hello
+          things in here
         </footer>
       </div>
     );
