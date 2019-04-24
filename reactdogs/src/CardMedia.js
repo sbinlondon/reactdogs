@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 
 class CardMedia extends Component {
 	constructor(props) {
@@ -11,11 +10,6 @@ class CardMedia extends Component {
 	  };
 	}
 
-	restart = event => {
-		// eslint-disable-next-line no-restricted-globals
-		location.reload();
-	}
-  
 	componentDidMount() {
 	  fetch("https://cors-anywhere.herokuapp.com/http://shibe.online/api/shibes?count=1")
 	  .then(result => result.json())
@@ -26,7 +20,7 @@ class CardMedia extends Component {
 			  isLoaded: true,
 			  img: result
 			})
-		  }, 3000)
+		  }, 1000)
 		},
 		(error) => {
 		  this.setState({
@@ -58,8 +52,7 @@ class CardMedia extends Component {
 	  } else {
 		return (
 		  <div>
-			<img src={img} alt="Shibe" />
-			<Button variant="contained" color="primary" onClick={this.restart}>Refresh shibe</Button>
+			<img src={img} alt="Shibe"/>
 		  </div>
 		);
 	  }

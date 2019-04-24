@@ -14,24 +14,37 @@ background-size: 100% 20px;
 .App {
   text-align: center;
   background-color: rgb(255, 255, 255);
-  position: 'absolute'; 
-  left: '50%'; 
-  top: '50%';
-  transform: 'translate(-50%, -50%)';
   padding: 10px;
+  margin: 20px;
 }
 
 .App-header {
   background-color: #add8e6;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
+  height: 100;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 18pt;
   color: white;
 }
 
 .App-link {
   color:#e6bbad;
 }
+
+.Button {
+  margin: 20px;
+}
+
+.Paper {
+  padding: 20px;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  padding:10px;
+}
+
+
+

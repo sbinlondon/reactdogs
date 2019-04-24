@@ -7,15 +7,17 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from './CardMedia';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
-  card: {
-    minWidth: 500,
-    marginBottom: 12
+const styles = theme => ({
+  Card: {
+    width: 300,
+    margin: 'auto'
   },
-  media: {
-    height: 140,
-  },
-};
+  Media: {
+    height: 550,
+    width: '100%',
+    objectFit: 'cover'
+  }
+});
 
 function MediaCard(props) {
   const { classes } = props;
@@ -27,7 +29,6 @@ function MediaCard(props) {
         direction="column"
         alignItems="center"
         justify="center"
-        style={{ minHeight: '10vh' }}
       >
       <Card className={classes.card}>
         <CardMedia />
