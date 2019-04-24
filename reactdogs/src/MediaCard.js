@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import CardMedia from './CardMedia';
 import Typography from '@material-ui/core/Typography';
 
 const styles = {
@@ -30,11 +30,7 @@ function MediaCard(props) {
         style={{ minHeight: '10vh' }}
       >
       <Card className={classes.card}>
-        <CardMedia
-          className={classes.media}
-          image="https://images.dog.ceo/breeds/labrador/n02099712_7414.jpg"
-          title="Dog picture"
-        />
+        <CardMedia />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2">
             Labrador
