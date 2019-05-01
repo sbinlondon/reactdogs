@@ -21,12 +21,9 @@ class App extends Component {
       }}
   >
         <Header />
-        <Paper className="Paper">
           <Chooser />
           <DogMedia/>
-          <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button>
-        </Paper>
-</div>
+          <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button></div>
     );
   }
 }
