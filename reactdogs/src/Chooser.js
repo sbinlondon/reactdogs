@@ -33,7 +33,7 @@ const dogbreeds = [
     label: 'Beagle',
   },
   {
-    value: 'Boxer',
+    value: 'Boxer dog',
     label: 'Boxer',
   },
   {
@@ -65,7 +65,7 @@ const dogbreeds = [
     label: 'Labrador',
   },
   {
-    value: 'Newfoundland',
+    value: 'Newfoundland dog',
     label: 'Newfoundland',
   },
   {
