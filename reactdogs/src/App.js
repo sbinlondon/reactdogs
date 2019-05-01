@@ -13,7 +13,6 @@ class App extends Component {
     error: null,
     img: null
   }
-
   
   updateDoggo = currentBreed => {
     return this.setState({currentBreed});
@@ -24,6 +23,7 @@ class App extends Component {
 		location.reload();
 	}
   render() {
+    console.log('app render', this.state.currentBreed)
     return (
       <div className="App"
       style={{
@@ -40,7 +40,7 @@ class App extends Component {
             isLoaded = {this.state.isLoaded}
             error = {this.state.error}
             img = {this.state.img}
-            currentBreed = {this.state.currentBreed} />
+            currentBreed = {this.state.currentBreed}/>
           <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button></div>
     );
   }
