@@ -97,13 +97,12 @@ class Chooser extends React.Component {
     currentBreed: this.props.currentBreed
   };
 
-  handleChange = currentBreed => event => {
-    this.setState({
-      currentBreed: event.target.value,
-    });
+  handleChange = ({ target: { value } }) => {
+    this.props.updateDoggo(value)
   };
 
   render() {
+
     const { classes } = this.props;
 
     return (
@@ -114,7 +113,7 @@ class Chooser extends React.Component {
           label="Choose a dog breed"
           className={classes.textField}
           value={this.props.currentBreed}
-          onChange={this.handleChange('dogbreeds')}
+          onChange={this.handleChange}
           SelectProps={{
             native: true,
             MenuProps: {

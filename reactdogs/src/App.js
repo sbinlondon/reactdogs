@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Paper from '@material-ui/core/Paper';
 import './App.css';
 import Chooser from './Chooser';
 import Header from './Header.js';
@@ -14,6 +13,11 @@ class App extends Component {
     error: null,
     img: null
   }
+
+  
+  updateDoggo = currentBreed => {
+    return this.setState({currentBreed});
+  };
 
   restart = event => {
 		// eslint-disable-next-line no-restricted-globals
@@ -30,11 +34,13 @@ class App extends Component {
   >
         <Header />
           <Chooser 
-            currentBreed = {this.state.currentBreed} />
+            currentBreed = {this.state.currentBreed}
+            updateDoggo = {this.updateDoggo} />
           <DogMedia
             isLoaded = {this.state.isLoaded}
             error = {this.state.error}
-            img = {this.state.img}/>
+            img = {this.state.img}
+            currentBreed = {this.state.currentBreed} />
           <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button></div>
     );
   }
