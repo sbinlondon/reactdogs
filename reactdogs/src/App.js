@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import './App.css';
 import Chooser from './Chooser';
 import Header from './Header.js';
-import CardMedia from './CardMedia.js';
+import DogMedia from './DogMedia.js';
 import Button from '@material-ui/core/Button';
 
 class App extends Component {
@@ -23,8 +23,8 @@ class App extends Component {
         <Header />
         <Paper className="Paper">
           <Chooser />
-          <CardMedia/>
-          <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh shibe</Button>
+          <DogMedia/>
+          <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button>
         </Paper>
 </div>
     );
