@@ -13,9 +13,50 @@ class App extends Component {
     error: null,
     img: null
   }
+
+  componentWillMount() {
+    console.log('fetching')
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.unsplash.com/photos/random?query=${this.state.currentBreed}&client_id=ce282d18193c36686e67c4f7b687af7c36352e97024cdbfcc8ff27e1b87bce27`)
+        .then(result => result.json())
+        .then(
+          (result) => {
+            setTimeout(() => {
+              this.setState({
+                isLoaded: true,
+                img: result.urls.regular
+              })
+            }, 500)
+          },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error: error
+            });
+          }
+        )
+      }
   
   updateDoggo = currentBreed => {
-    return this.setState({currentBreed});
+    this.setState({currentBreed});
+    this.setState({isLoaded: false});
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.unsplash.com/photos/random?query=${currentBreed}&client_id=ce282d18193c36686e67c4f7b687af7c36352e97024cdbfcc8ff27e1b87bce27`)
+        .then(result => result.json())
+        .then(
+          (result) => {
+            setTimeout(() => {
+              this.setState({
+                isLoaded: true,
+                img: result.urls.regular
+              })
+            }, 500)
+          },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error: error
+            });
+          }
+        )
   };
 
   restart = event => {
