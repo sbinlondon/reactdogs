@@ -31,7 +31,7 @@ export class DogMedia extends React.Component {
       }
     
       render() {
-        console.log('dogmedia render', this.state.currentBreed)
+        console.log('dogmedia render', this.props.currentBreed)
         const { error, isLoaded, img } = this.state;
         if (error) {
           return (
