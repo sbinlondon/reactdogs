@@ -7,6 +7,14 @@ import DogMedia from './DogMedia.js';
 import Button from '@material-ui/core/Button';
 
 class App extends Component {
+
+  state = {
+    currentBreed: 'Labrador',
+    isLoaded: false,
+    error: null,
+    img: null
+  }
+
   restart = event => {
 		// eslint-disable-next-line no-restricted-globals
 		location.reload();
@@ -21,8 +29,12 @@ class App extends Component {
       }}
   >
         <Header />
-          <Chooser />
-          <DogMedia/>
+          <Chooser 
+            currentBreed = {this.state.currentBreed} />
+          <DogMedia
+            isLoaded = {this.state.isLoaded}
+            error = {this.state.error}
+            img = {this.state.img}/>
           <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button></div>
     );
   }

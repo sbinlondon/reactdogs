@@ -93,12 +93,13 @@ const dogbreeds = [
 class Chooser extends React.Component {
   state = {
     name: 'Chooser',
-    dogbreeds: 'Labrador',
+    dogbreeds: {},
+    currentBreed: this.props.currentBreed
   };
 
-  handleChange = name => event => {
+  handleChange = currentBreed => event => {
     this.setState({
-      [name]: event.target.value,
+      currentBreed: event.target.value,
     });
   };
 
@@ -112,7 +113,7 @@ class Chooser extends React.Component {
           select
           label="Choose a dog breed"
           className={classes.textField}
-          value={this.state.dogbreeds}
+          value={this.props.currentBreed}
           onChange={this.handleChange('dogbreeds')}
           SelectProps={{
             native: true,
