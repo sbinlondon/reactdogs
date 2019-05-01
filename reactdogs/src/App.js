@@ -22,7 +22,6 @@ class App extends Component {
   updateDoggo = currentBreed => {
     
     this.setState({currentBreed});
-    this.setState({isLoaded: false});
     this.callUtils(currentBreed)
   };
 
@@ -48,9 +47,26 @@ class App extends Component {
         )
   };
 
-  restart = event => {
+  refresh = event => {
 		// eslint-disable-next-line no-restricted-globals
-		location.reload();
+		this.setState({isLoaded: false});
+    Utils.callDogApi(this.state.currentBreed)
+        .then(
+          (result) => {
+            setTimeout(() => {
+              this.setState({
+                isLoaded: true,
+                img: result.urls.regular
+              })
+            }, 500)
+          },
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error: error
+            });
+          }
+        )
 	}
   render() {
     console.log('app render', this.state.currentBreed)
@@ -71,7 +87,7 @@ class App extends Component {
             error = {this.state.error}
             img = {this.state.img}
             currentBreed = {this.state.currentBreed}/>
-          <Button className="Button" variant="contained" color="primary" onClick={this.restart}>Refresh doggo</Button></div>
+          <Button className="Button" variant="contained" color="primary" onClick={this.refresh}>Refresh doggo</Button></div>
     );
   }
 }
