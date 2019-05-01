@@ -4,6 +4,7 @@ import Chooser from './Chooser';
 import Header from './Header.js';
 import DogMedia from './DogMedia.js';
 import Button from '@material-ui/core/Button';
+import Utils from './Utils';
 
 class App extends Component {
 
@@ -15,32 +16,20 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log('fetching')
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.unsplash.com/photos/random?query=${this.state.currentBreed}&client_id=ce282d18193c36686e67c4f7b687af7c36352e97024cdbfcc8ff27e1b87bce27`)
-        .then(result => result.json())
-        .then(
-          (result) => {
-            setTimeout(() => {
-              this.setState({
-                isLoaded: true,
-                img: result.urls.regular
-              })
-            }, 500)
-          },
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error: error
-            });
-          }
-        )
+    this.callUtils(this.state.currentBreed)
       }
   
   updateDoggo = currentBreed => {
+    
     this.setState({currentBreed});
     this.setState({isLoaded: false});
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.unsplash.com/photos/random?query=${currentBreed}&client_id=ce282d18193c36686e67c4f7b687af7c36352e97024cdbfcc8ff27e1b87bce27`)
-        .then(result => result.json())
+    this.callUtils(currentBreed)
+  };
+
+  callUtils = currentBreed => {
+    this.setState({currentBreed});
+    this.setState({isLoaded: false});
+    Utils.callDogApi(currentBreed)
         .then(
           (result) => {
             setTimeout(() => {
