@@ -56,7 +56,19 @@ class App extends Component {
     this.getDoggo(currentBreed);
     Store.currentBreed = currentBreed;
     console.log(`Current breed is ${Store.currentBreed}`)
+    this.changeBgColor();
   };
+
+  changeBgColor = () => {
+      document.getElementsByTagName('body')[0].style.background = Store.currentBgColor1
+    // document.body.style = `background: linear-gradient(
+    //   to bottom,
+    //   ${Store.currentBgColor1},
+    //   ${Store.currentBgColor1} 50%,
+    //   ${Store.currentBgColor2} 50%,
+    //   ${Store.currentBgColor2}
+    // );`
+  }
 
   render() {
     return (
@@ -64,7 +76,7 @@ class App extends Component {
         style={{
           position: 'absolute', 
           left: '50%', 
-          transform: 'translate(-50%)'
+          transform: 'translate(-50%)',
         }}
       >
         <Header />

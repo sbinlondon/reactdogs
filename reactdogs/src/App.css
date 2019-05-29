@@ -1,11 +1,11 @@
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
   to bottom,
   #add8e6,
   #add8e6 50%,
   #99cfe0 50%,
   #99cfe0
-);
+); */
 /* The rectangle in which to repeat. 
    It can be fully wide in this case */
 background-size: 100% 20px;
