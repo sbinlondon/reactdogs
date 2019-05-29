@@ -1,16 +1,11 @@
 import { decorate, observable, action } from 'mobx';
 
 class Store {
-  test = 'default breed';
-
-  test2 = () => {
-    console.log(`selected breed is ${this.test}`)
-  }
+  currentBreed = 'Labrador';
 }
 
 decorate(Store, {
-  test: observable,
-  test2: action,
+  currentBreed: observable
 });
 
 export default new Store();

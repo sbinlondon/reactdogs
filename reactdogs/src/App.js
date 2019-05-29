@@ -5,19 +5,17 @@ import Header from './Header.js';
 import DogMedia from './DogMedia.js';
 import Button from '@material-ui/core/Button';
 import Utils from './utils/Utils';
-
 import Store from './stores/Store';
 
 class App extends Component {
   state = {
-    currentBreed: 'Labrador',
     isLoaded: false,
     error: null,
     img: null
   }
 
   componentWillMount() {
-    this.getDoggo(this.state.currentBreed)
+    this.getDoggo(Store.currentBreed)
   }
 
   callUtils = breed => {
@@ -49,12 +47,15 @@ class App extends Component {
   refresh = () => {
     // eslint-disable-next-line no-restricted-globals
 		this.setState({isLoaded: false});
-    this.callUtils(this.state.currentBreed)
+    this.callUtils(Store.currentBreed)
+    console.log(`Current breed is ${Store.currentBreed}`)
   }
 
   updateDoggo = currentBreed => {
     this.setState({currentBreed});
-    this.getDoggo(currentBreed)
+    this.getDoggo(currentBreed);
+    Store.currentBreed = currentBreed;
+    console.log(`Current breed is ${Store.currentBreed}`)
   };
 
   render() {
@@ -68,14 +69,14 @@ class App extends Component {
       >
         <Header />
         <Chooser 
-          currentBreed = {this.state.currentBreed}
+          currentBreed = {Store.currentBreed}
           updateDoggo = {this.updateDoggo} 
         />
         <DogMedia
           isLoaded = {this.state.isLoaded}
           error = {this.state.error}
           img = {this.state.img}
-          currentBreed = {this.state.currentBreed}/>
+          currentBreed = {Store.currentBreed}/>
         <Button 
           className="Button" 
           variant="contained"
