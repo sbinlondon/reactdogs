@@ -4,7 +4,9 @@ import Chooser from './Chooser';
 import Header from './Header.js';
 import DogMedia from './DogMedia.js';
 import Button from '@material-ui/core/Button';
-import Utils from './Utils/Utils';
+import Utils from './utils/Utils';
+
+import Store from './stores/Store';
 
 class App extends Component {
   state = {
@@ -45,7 +47,7 @@ class App extends Component {
   }
 
   refresh = () => {
-		// eslint-disable-next-line no-restricted-globals
+    // eslint-disable-next-line no-restricted-globals
 		this.setState({isLoaded: false});
     this.callUtils(this.state.currentBreed)
   }

@@ -38,7 +38,10 @@ class Chooser extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <form className={classes.container} noValidate autoComplete="off">
+      <form 
+        className={classes.container} 
+        noValidate autoComplete="off"
+      >
         <TextField
           id="outlined-select-dogbreeds-native"
           select
@@ -57,7 +60,10 @@ class Chooser extends React.Component {
           variant="outlined"
         >
           {Dogbreeds.map(option => (
-            <option key={option.value} value={option.value}>
+            <option 
+              key={option.value} 
+              value={option.value}
+            >
               {option.label}
             </option>
           ))}
