@@ -60,14 +60,7 @@ class App extends Component {
   };
 
   changeBgColor = () => {
-      document.getElementsByTagName('body')[0].style.background = Store.currentBgColor1
-    // document.body.style = `background: linear-gradient(
-    //   to bottom,
-    //   ${Store.currentBgColor1},
-    //   ${Store.currentBgColor1} 50%,
-    //   ${Store.currentBgColor2} 50%,
-    //   ${Store.currentBgColor2}
-    // );`
+    document.getElementsByTagName('body')[0].style = `background: linear-gradient( to bottom, ${Store.currentBgColor1}, ${Store.currentBgColor1} 50%, ${Store.currentBgColor2} 50%, ${Store.currentBgColor2}); background-size: 100% 20px;` 
   }
 
   render() {

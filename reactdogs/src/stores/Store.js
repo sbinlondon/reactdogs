@@ -2,8 +2,8 @@ import { decorate, observable, action } from 'mobx';
 
 class Store {
   currentBreed = 'Labrador';
-  currentBgColor1 = '#BADA55';
-  currentBgColor2 = '#707020';
+  currentBgColor1 = '#add8e6';
+  currentBgColor2 = '#99cfe0';
   changeBgColor = () => {
     document.body.style = `background: linear-gradient(
       to bottom,
